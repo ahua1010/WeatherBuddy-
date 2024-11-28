@@ -1,0 +1,32 @@
+name: 'Daily Weather Notification'
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 时间 0 点运行（北京时间早上8点）
+  workflow_dispatch:
+
+jobs:
+  send_weather:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout code'
+        uses: actions/checkout@v2
+
+      - name: 'Get Weather'
+        run: bash ./weather.sh
+
+      - name: 'Send Weather Report'
+        run: |
+          curl -X POST https://api.line.me/v2/bot/message/push \
+          -H "Authorization: Bearer b8a9a019881d9cc3e631bcea321b2594" \
+          -H "Content-Type: application/json" \
+          -d '{
+                "to": "阿華",
+                "messages":[
+                  {
+                    "type":"text",
+                    "text":"今日天氣：$(cat result.txt)"
+                  }
+                ]
+              }'
