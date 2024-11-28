@@ -19,7 +19,7 @@ jobs:
       - name: 'Send Weather Report'
         run: |
           curl -X POST https://api.line.me/v2/bot/message/push \
-          -H "Authorization: Bearer b8a9a019881d9cc3e631bcea321b2594" \
+          -H "Authorization: Bearer q0a/DTzYO1y0+qNklYXK1IVzrQWer8tbBR7j9x0BsZ0KuVEpdqxIXWPVu15ojoBlJ0LlF3jg58fWA78YMlZDb7DRLO9mDRt4F6zJuXs+xjqJX03JN2UcuhmNRF8vRpQUMGKIr251bZQSn2QpNxpoEwdB04t89/1O/w1cDnyilFU=" \
           -H "Content-Type: application/json" \
           -d '{
                 "to": "lafa901120line",
