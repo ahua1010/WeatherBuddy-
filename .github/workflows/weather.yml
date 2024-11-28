@@ -22,7 +22,7 @@ jobs:
           -H "Authorization: Bearer b8a9a019881d9cc3e631bcea321b2594" \
           -H "Content-Type: application/json" \
           -d '{
-                "to": "阿華",
+                "to": "lafa901120line",
                 "messages":[
                   {
                     "type":"text",
